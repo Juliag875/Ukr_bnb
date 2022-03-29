@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+puts "⭐Seeding Hosts..."
 
 h1 = Host.create(
   name: "Art Museum Haven w/Queen size bed", 
@@ -14,7 +16,6 @@ h1 = Host.create(
   contact: "https://www.airbnb.com/contact_host/5432202/send_message",
   link: "https://www.airbnb.com/rooms/5432202?source_impression_id=p3_1648500461_QjLU8Xv32KnPmFxN"   
  )
-<<<<<<< HEAD
 
  h2 = Host.create(
   name: "Cozy Urban Appartment",
@@ -96,7 +97,7 @@ h1 = Host.create(
   contact: "https://www.airbnb.com/contact_host/53266432/send_message?adults=2",
   link: "https://www.airbnb.com/rooms/53266432?adults=2&location=Chisinau%2C%20Moldova&source_impression_id=p3_1648518582_EEfxgCpEn1fbWK6L"
  )
-=======
+
  h11 = Host.create(
   name: "⭐Spacious Bungalow⭐5min 2 Box Hill⭐Train⭐Parking", 
   address: "Blackburn, Victoria, Australia",
@@ -177,5 +178,28 @@ h1 = Host.create(
   contact: "https://www.airbnb.com/contact_host/26199732/send_message?adults=2&children=3&infants=0&check_in=2022-04-22&check_out=2022-04-29",
   link: "https://www.airbnb.com/rooms/26199732?adults=2&children=3&infants=0&check_in=2022-04-22&check_out=2022-04-29&federated_search_id=3594ee2d-c4fe-40a1-92f7-550c848a9a64&source_impression_id=p3_1648512904_sluzWZCWsU%2F6sK42"   
  )
+
+puts "⭐Seeding Clients..."
+
+10.times do
+  Client.create(
+    name: Faker::Name.unique.name,
+    location: Faker::Address.country,
+    email: Faker::Internet.email
+    phone: Faker::PhoneNumber.cell_phone
+  )
+
+  puts "⭐Seeding Rentals..."
+
+  15.times do
+   Rental.create(
+      host_id: Host.ids.sample,
+      client_id: Client.ids.sample, 
+      available: true
+     
+ )
+
+  end
+  puts "⭐ Seeding Done!..."
  
 
