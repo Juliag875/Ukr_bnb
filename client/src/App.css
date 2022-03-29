@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+/* * {
+  background-image: url("https://d2r55xnwy6nx47.cloudfront.net/uploads/2019/10/Sunflower_1300lede.jpg");
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +18,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #54bcec;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

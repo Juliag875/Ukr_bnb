@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_03_28_204014) do
   create_table "rentals", force: :cascade do |t|
     t.integer "host_id"
     t.integer "client_id"
+    t.boolean "available"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
