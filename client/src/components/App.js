@@ -1,27 +1,22 @@
 // import logo from './logo.svg';
-import './App.css';
-import React, { useEffect, useState } from "react";
+import '../App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import HostContainer from './HostContainer';
 import Navbar from './Navbar';
 import MyRental from './MyRental';
 
 function App() {
-  const [hosts, setHosts] = useState([]);
   
-  useEffect(() => {
-    fetch("/hosts")
-      .then((r) => r.json())
-      .then(setHosts);
-  }, []);
- 
   return (
     <div className="App">
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<App />} />
-        <Route exact path="/rentals" element={<MyRental />} />
-        <Route path="/host" element={<HostContainer hosts = {hosts} />} />
-      </Routes> 
+       <Routes>
+        <Route exact path="/" element={<App />} >
+          <Route path="/rentals" element={<MyRental />} />
+          <Route path="/host" element={<HostContainer />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
