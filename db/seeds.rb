@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+Host.destroy_all
+Client.destroy_all
+Rental.destroy_all
+
 puts "⭐Seeding Hosts..."
 
 h1 = Host.create(
@@ -185,21 +188,20 @@ puts "⭐Seeding Clients..."
   Client.create(
     name: Faker::Name.unique.name,
     location: Faker::Address.country,
-    email: Faker::Internet.email
+    email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone
   )
+end
 
-  puts "⭐Seeding Rentals..."
+puts "⭐Seeding Rentals..."
 
   15.times do
    Rental.create(
       host_id: Host.ids.sample,
       client_id: Client.ids.sample, 
-      available: true
-     
+      available: true   
  )
-
-  end
+end
   puts "⭐ Seeding Done!..."
  
 
