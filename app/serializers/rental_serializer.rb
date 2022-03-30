@@ -1,3 +1,5 @@
 class RentalSerializer < ActiveModel::Serializer
-  attributes :id, :host_id, :client_id
+  attributes :id, :client_id, :contact, :address, :image, :name
+
+  belongs_to :host
 end

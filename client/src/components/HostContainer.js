@@ -1,8 +1,22 @@
 import React from 'react'
+import HostCard from './HostCard'
 
-function HostContainer() {
+function HostContainer({hosts}) {
+  console.log(hosts)
   return (
-    <div>HostContainer</div>
+    <div>
+      {hosts.map(host => (
+        <HostCard
+          key={host.id}
+          id={host.id}
+          name={host.name}
+          address={host.address}
+          image={host.image}
+          description={host.description}
+          contact={host.contact}
+          link={host.link}
+        />))}
+      </div>
   )
 }
 

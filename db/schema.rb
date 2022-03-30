@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_03_28_204014) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -26,11 +23,7 @@ ActiveRecord::Schema.define(version: 2022_03_28_204014) do
 
   create_table "hosts", force: :cascade do |t|
     t.string "name"
-    t.string "address"
-    t.string "image"
-    t.text "description"
-    t.string "contact"
-    t.string "link"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,7 +31,12 @@ ActiveRecord::Schema.define(version: 2022_03_28_204014) do
   create_table "rentals", force: :cascade do |t|
     t.integer "host_id"
     t.integer "client_id"
-    t.boolean "available"
+    t.string "name"
+    t.string "contact"
+    t.string "address"
+    t.string "image"
+    t.text "description"
+    t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

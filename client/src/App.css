@@ -1,12 +1,66 @@
-.App {
+* {
+  margin: auto;
+  padding: 0;
+  font-family: 'Cinzel', serif;
   text-align: center;
 }
+
+h1 {
+  color: blue;
+}
+
+h1:hover {
+  color: white;
+  background-color: blue;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
+#nav {
+  /* background-color: rgb(70, 70, 252); */
+  background-color: yellow;
+  height: 80%;
+}
+
+ .nav-li {
+  /* background-image:url("https://cdn.pixabay.com/photo/2022/03/02/10/23/ukraine-7042810_960_720.png"); */
+  display: inline-block;
+  margin: 0px 8px;
+  padding: 1px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: blue;
+  font-weight: bold;
+  border-bottom: 2px solid blue;
+  transition: 0.1s;
+}
+
+.overlay {
+  background-color: rgba(200, 255, 50, 0.4);
+  height: 80px;
+  width: 100%; 
+}
+
+.logo {
+  position: absolute;
+  top: 106px;
+  left: 81px;
+  width: 100px;
+  height: 80px;
+  margin:-60px 0 0 -60px;
+}
+
 
 /* * {
   background-image: url("https://d2r55xnwy6nx47.cloudfront.net/uploads/2019/10/Sunflower_1300lede.jpg");
 } */
 
-.App-logo {
+/* .App {
+  text-align: center;
+} */
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -39,4 +93,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

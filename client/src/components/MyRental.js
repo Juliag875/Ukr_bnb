@@ -6,4 +6,4 @@ function MyRental() {
   )
 }
 
-export default MyRental
+export default MyRental;
