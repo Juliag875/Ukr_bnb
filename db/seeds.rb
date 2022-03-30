@@ -36,7 +36,7 @@ puts "⭐Seeding Rentals..."
  h1 = Rental.create(
    client_id: Client.all.sample.id,
    host_id: Host.all.sample.id,
-  name: "Cozy Urban Appartment",
+  name: "Cozy Urban Apartment",
   address: "Brooklyn, New York, United States",
   image: "https://a0.muscache.com/im/pictures/f670f480-4481-4efe-9775-31f1b557bd0e.jpg?im_w=1200",
   description: "Entire rental unit: 4 guests, 1 bedroom, 1 bed, 1 private bath",
