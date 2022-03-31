@@ -21,14 +21,16 @@ button.card-button {
   margin-left: 10px;
   margin-bottom: 8px;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 7px;
   text-align: center;
   align-items: flex-start;
   cursor: default;
-  background-color: #47c2fc;
+  
+  /* background-color: #47c2fc; */
   box-sizing: border-box;
   font: 700 11px system-ui;
   padding: 1px 7px 2px;
+  border: none;
 }
 
 button.card-button:hover {
@@ -99,7 +101,8 @@ p.logo {
 
 .card {
   margin: 1rem;
-  box-shadow: 0 0 5px 0 rgb(241, 239, 239);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  ;
   border-radius: 3px;
   border: 1px #ccc;
   width: 300px;

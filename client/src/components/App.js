@@ -12,7 +12,7 @@ import HostForm from './HostForm'
 function App() {
   const [rentals, setRentals] = useState([]);
   const [locationInput, setLocationInput] = useState("");
-  // const [availability, setAvailability] = useState("");
+  const [availability, setAvailability] = useState(false);
 
   useEffect(() => {
     fetch("/rentals")
@@ -25,9 +25,15 @@ function App() {
     rental.address.toLowerCase().includes(locationInput.toLowerCase())
   );
 
-  // const filterByAvailability = filterByAddress.filter((rental) =>
-  //   rental? nil : rentals
-  // );
+  const filterByAvailability = () => {
+    if (availability){
+      return filterByAddress.filter((rental) =>
+      !rental.client_id
+    );
+    }else{
+      return filterByAddress
+    }
+  }
 
 
   return (
@@ -47,7 +53,7 @@ function App() {
             setLocationInput={setLocationInput}
           />
           <h2 className="yourRentals">Here Are your Rentals!</h2>
-          <RentalContainer rentals={filterByAddress} />
+          <RentalContainer rentals={filterByAvailability()} />
         </Route>
         <Route exact path="/">
           <Home />

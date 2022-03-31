@@ -29,7 +29,7 @@ class HostsController < ApplicationController
   end
 
   def host_params
-    params.permit(:name, :image, :location)
+    params.permit(:name, :email)
   end
 
   def not_found
