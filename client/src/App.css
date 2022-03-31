@@ -40,7 +40,7 @@ button.card-button:hover {
 }
 
 div.host {
-  background-color: blue;
+  background-color: #f43362;
   color: white;
   text-align: center;
   padding-top: 40px;
@@ -52,8 +52,7 @@ div.host {
 
 .header {
   /* 95% of the viewport height */
-  height: 40vh;
-  /* stretch background colors from left to right, then diagonally to bottom..out a level and into the img folder */
+  height: 45vh;
   background-image: 
       /* use color-picker to adjust opacity to 0.8 so background image is visible. */ url(https://images.unsplash.com/photo-1594616647927-2382fe456b07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80);
   background-size: cover;
@@ -63,7 +62,6 @@ div.host {
 }
 
 .nav-li {
-  /* background-image:url("https://cdn.pixabay.com/photo/2022/03/02/10/23/ukraine-7042810_960_720.png"); */
   display: inline-block;
   margin: 0px 8px;
   padding: 1px;

@@ -20,16 +20,15 @@ function App() {
       .then(setRentals);
   }, []);
 
-  const filterByAddress = rentals.filter((rental) =>
+
+  const filterByAddress = rentals.filter((rental) => 
     rental.address.toLowerCase().includes(locationInput.toLowerCase())
   );
-  const filterByAvailability = filterByAddress.filter((rental) =>
-    rental.client_id ? "Rental not available" : rentals
-  );
 
-  function handleAddCard(newCard) {
-    setRentals([...filterByAddress, newCard]);
-  }
+  // const filterByAvailability = filterByAddress.filter((rental) =>
+  //   rental? nil : rentals
+  // );
+
 
   return (
     <div className="App">
@@ -39,7 +38,7 @@ function App() {
         <Route exact path="/rentals">
           <RentalContainer rentals={rentals} />
         </Route>
-        <Route exact path="/donations">
+        <Route exact path="/donation">
           <Donation />
         </Route>
         <Route exact path="/search">
@@ -48,10 +47,10 @@ function App() {
             setLocationInput={setLocationInput}
           />
           <h2 className="yourRentals">Here Are your Rentals!</h2>
-          <RentalContainer rentals={filterByAvailability} />
+          <RentalContainer rentals={filterByAddress} />
         </Route>
         <Route exact path="/">
-          <Home onAddCard={handleAddCard}/>
+          <Home />
         </Route>
         <Route exact path="/hostform">
           <HostForm />

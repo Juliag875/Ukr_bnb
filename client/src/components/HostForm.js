@@ -1,12 +1,25 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 
-function HostForm({onAddCard}) {
-  
-  const [formData, setFormData] = useState({
-    name: "",
-    image: "",
-    location: "",
-  });
+function HostForm() {
+const [hosts, setHosts] = useState([]);
+
+useEffect(() => {
+  fetch("/hosts")
+    .then((r) => r.json())
+    .then(setHosts);
+}, []);
+
+function handleAddCard(newCard) {
+  setHosts([...hosts, newCard]);
+}
+
+const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+});
+
+const history = useHistory();
 
 function handleChange(event) {
   setFormData({
@@ -15,27 +28,27 @@ function handleChange(event) {
   });
 }
 
-function handleSubmit(e) {
-  e.preventDefault();
+function handleSubmit(event) {
+  event.preventDefault();
 
-  const newCard = {
-      name: formData.name,
-      image: formData.image,
-      meaningUp : formData.location,
-    };
+const newCard = {
+    name: formData.name,
+    email: formData.email,
+  };
 
-  fetch("rentals", {
+fetch("/hosts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-    },
+  },
     body: JSON.stringify(newCard),
   })
     .then((r) => r.json())
-    .then((newCard) => onAddCard(newCard));
-    setFormData({name:"", image:"", location:""})
+    .then((newCard) => handleAddCard(newCard));
+    setFormData({name:"", email:""})
     console.log(newCard)
-}
+    history.push("https://www.airbnb.com/for-airbnb-org/host?_ga=2.49331118.905296572.1648657862-745576770.1643075090");
+  }
 
 return (
   <div className="formcontainer">
@@ -45,32 +58,28 @@ return (
       name="name"
       onChange={handleChange}
       value={formData.name}
-      placeholder="Add title..."
+      placeholder="Add name..."
       className="input-text"
     />
+    <br></br>
+    <br></br>
     <input
       type="text"
-      name="image"
+      name="email"
       onChange={handleChange}
-      value={formData.image}
-      placeholder="Add image URL..."
+      value={formData.email}
+      placeholder="Add email..."
       className="input-text"
     />
-  <input
-      type="text"
-      name="location"
-      onChange={handleChange}
-      value={formData.location}
-      placeholder="Add location..."
-      className="input-text"
-    />
-    <input 
+    <br></br>
+    <br></br>
+    <button
       style={{backgroundColor: "red"}}
       type="submit"
       name="submit"
       value="Add New Rental"
       className="submit"
-    />
+    >Submit</button>
   </form>
 </div>
 )

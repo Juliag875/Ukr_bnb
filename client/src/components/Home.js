@@ -2,8 +2,7 @@ import React from 'react';
 // import HostForm from './HostForm';
 import {Link} from "react-router-dom";
 
-function Home({onAddCard}) {
-
+function Home() {
   return (
     <div>
       <div className="host">
