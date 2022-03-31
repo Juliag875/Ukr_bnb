@@ -4,15 +4,11 @@ import React from "react";
 function RentalCard({ id, name, address, image, description, contact, link }) {
   return (
     <div className="card">
-      <h4>{name}</h4>
-      <h5>Address: {address}</h5>
-      <img src={image} alt={name} width="30%" />
-      <p>
-        <a href={contact}>Contact</a>
-      </p>
-
-      <a href={link}>Show Details</a>
-
+      <h5>{name}</h5>
+      <h6>{address}</h6>
+      <img src={image} alt={name} width="250px" height="150px" />
+      <button href={contact}>CONTACT ⭐</button>
+      <button href={link}>DETAILS ⭐</button>
       <p>{description}</p>
     </div>
   );
