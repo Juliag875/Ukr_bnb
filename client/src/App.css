@@ -10,22 +10,14 @@ h1 {
   color: blue;
 }
 
-h1:hover {
-  color: white;
-  background-color: blue;
-  -webkit-transition: background-color 1000ms linear;
-  -ms-transition: background-color 1000ms linear;
-  transition: background-color 1000ms linear;
-}
-
 h5, h6 {
   font-family: 'Outfit', sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 450;
 }
 
-button {
-  color: white;
+button.card-button {
+  color: blue;
   margin-left: 10px;
   margin-bottom: 8px;
   display: inline-block;
@@ -35,8 +27,27 @@ button {
   cursor: default;
   background-color: #47c2fc;
   box-sizing: border-box;
-  font: 600 11px system-ui;
+  font: 700 11px system-ui;
   padding: 1px 7px 2px;
+}
+
+button.card-button:hover {
+  color: white;
+  background-color: blue;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
+div.host {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: 500;
+  margin-top: 13%;
+  height: 200px;
+  width: 45%;
 }
 
 .header {

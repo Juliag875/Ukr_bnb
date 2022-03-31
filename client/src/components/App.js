@@ -3,11 +3,11 @@ import "../App.css";
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router";
 import RentalContainer from "./RentalContainer";
-import Navbar from "./Navbar";
 import Donation from "./Donation";
-
-// import MyRental from "./MyRental";
+import Navbar from "./Navbar";
+import Home from './Home'
 import Search from "./Search";
+import HostForm from './HostForm'
 
 function App() {
   const [rentals, setRentals] = useState([]);
@@ -27,22 +27,21 @@ function App() {
     rental.client_id ? "Rental not available" : rentals
   );
 
+  function handleAddCard(newCard) {
+    setRentals([...filterByAddress, newCard]);
+  }
+
   return (
     <div className="App">
       <Navbar />
 
       <Switch>
-        {/* <Route exact path="/">
-          <Home />
-        </Route> */}
-
         <Route exact path="/rentals">
           <RentalContainer rentals={rentals} />
         </Route>
         <Route exact path="/donations">
           <Donation />
         </Route>
-
         <Route exact path="/search">
           <Search
             filterByAddress={filterByAddress}
@@ -51,10 +50,12 @@ function App() {
           <h2 className="yourRentals">Here Are your Rentals!</h2>
           <RentalContainer rentals={filterByAvailability} />
         </Route>
-
-        {/* <Route exact path="/rentals">
-          <MyRental />
-        </Route> */}
+        <Route exact path="/">
+          <Home onAddCard={handleAddCard}/>
+        </Route>
+        <Route exact path="/hostform">
+          <HostForm />
+        </Route>
       </Switch>
     </div>
   );
