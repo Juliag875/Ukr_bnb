@@ -5,9 +5,11 @@ function Navbar() {
   return (
     <div id="nav" className="header">
       <div className="overlay">
-        <h1><NavLink className="nav-li" exact to="/">
-          uBnb
-        </NavLink> </h1>
+        <h1>
+          <NavLink className="nav-li" exact to="/">
+            uBnb
+          </NavLink>{" "}
+        </h1>
         <NavLink className="nav-li" exact to="/search">
           Search
         </NavLink>
