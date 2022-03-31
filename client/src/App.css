@@ -1,7 +1,7 @@
 * {
   margin: auto;
   padding: 0;
-  font-family: "Cinzel", serif;
+  /* font-family: "Cinzel", serif; */
   text-align: center;
 }
 
@@ -44,10 +44,24 @@ div.host {
   color: white;
   text-align: center;
   padding-top: 40px;
-  font-weight: 500;
-  margin-top: 13%;
-  height: 200px;
+  margin-top: 10%;
+  height: 30vh;
   width: 45%;
+}
+
+button.buttonlogo {
+  margin-top: 30px;
+  border-radius: 15px;
+  width: 20vh;
+  height: 30px;
+  border: none;
+  background-color: rgb(17, 175, 248);
+  cursor: grab;
+}
+
+p.logo {
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 .header {

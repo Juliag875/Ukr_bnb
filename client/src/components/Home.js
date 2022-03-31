@@ -7,9 +7,9 @@ function Home() {
     <div>
       <h1>Safe Harbor Ukraine</h1>
       <div className="host">
-        <p>Help house refugees fleeing Ukraine</p>
+        <p className="logo">Help house refugees fleeing Ukraine</p>
         <Link to={"/hostform"}>
-          <button>Become a Host</button>
+          <button className="buttonlogo">Become a Host</button>
         </Link>
       </div>
     </div>
