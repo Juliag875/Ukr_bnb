@@ -31,6 +31,16 @@ button.card-button {
   padding: 1px 7px 2px;
   border: none;
 }
+
+button.submit{
+  margin-top: 30px;
+  border-radius: 15px;
+  width: 20vh;
+  height: 30px;
+  border: none;
+  background-color: rgb(17, 175, 248);
+  cursor: default;
+}
 /* 
 button.card-button:hover a {
   color: yellow;
@@ -123,7 +133,20 @@ p.logo {
   justify-content: center;
 }
 
+input {
+  margin-top: 12px;
+  font-family: inherit;
+  font-size: 1em;
+  border-bottom: 2px solid gray;
+  transition: all 0.2s;
+  width: 40%;
+}
 
+/* @media (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  } */
 
 /* .App {
   text-align: center;
