@@ -1,7 +1,7 @@
 import React from "react";
 import RentalCard from "./RentalCard";
 
-function RentalContainer({ rentals, deleteRental}) {
+function RentalContainer({ handleUpdateRental,rentals, deleteRental}) {
   
   return (
     <div className="cards">
@@ -16,6 +16,7 @@ function RentalContainer({ rentals, deleteRental}) {
           contact={rental.contact}
           link={rental.link}
           deleteRental = {deleteRental}
+          handleUpdateRental={handleUpdateRental}
         />
       ))}
     </div>

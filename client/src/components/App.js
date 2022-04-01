@@ -38,6 +38,17 @@ function App() {
     setRentals(updatedRentals)
   }
 
+  function handleUpdateRental(updatedItem) {
+    const updatedItems = filterByAddress.map(rental => {
+      if(rental.id === updatedItem.id) {
+        return updatedItem;
+      } else{
+        return rental;
+      }
+    })
+    setRentals(updatedItems);
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -54,7 +65,8 @@ function App() {
           <h2 className="your-rentals">Here Are your Rentals!</h2>
           <RentalContainer 
             rentals={filterByAddress} 
-            deleteRental = {deleteRental}/>
+            deleteRental = {deleteRental}
+            handleUpdateRental= {handleUpdateRental}/>
         </Route>
         <Route exact path="/">
           <Home />

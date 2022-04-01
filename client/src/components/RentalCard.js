@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function RentalCard({ deleteRental, id, name, address, image, contact, link }) {
+function RentalCard({ handleUpdateRental, deleteRental, id, name, address, image, contact, link }) {
   const [availability, setAvailability] = useState(false)
 
   function handleDelete() {
@@ -18,7 +18,7 @@ function RentalCard({ deleteRental, id, name, address, image, contact, link }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        client_id: !availability,
+        id: !id,
       }),
     }).then((res) => res.json())
       .then(availability => setAvailability(availability))
@@ -37,9 +37,9 @@ function RentalCard({ deleteRental, id, name, address, image, contact, link }) {
         <a href={link} style={{color:"black", textDecoration: "none"}}> Details </a>
       </button>
       { availability ? (
-        <button className="card-button" onClick={updateRentals}>Save</button>
-      ) : (
         <button className="card-button" onClick={updateRentals}>Saved</button>
+      ) : (
+        <button className="card-button" onClick={updateRentals}>Save</button>
       )}
       <button className="card-button" onClick={handleDelete}>Delete</button>
     </div>

@@ -80,7 +80,7 @@ function HostForm() {
           value="Add New Rental"
           className="submit"
         >
-          Login
+          Submit
         </button>
       </form>
     </div>
