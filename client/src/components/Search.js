@@ -2,7 +2,6 @@ import React from "react";
 import Select from "react-select";
 
 function Search({ setLocationInput }) {
-  // const [formData, setFormData] = useState("");
 
   const locationOptions = [
     { value: "", label: "All" },

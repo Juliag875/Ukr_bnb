@@ -34,9 +34,9 @@ class HostsController < ApplicationController
 
   def not_found
     render json: {"error": "Address not found"}, status: :not_found
-   end
+  end
 
-   def handle_invalid_record(invalid)
+  def handle_invalid_record(invalid)
     render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
   end
 end

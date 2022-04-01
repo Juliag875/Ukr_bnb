@@ -8,7 +8,7 @@ function Navbar() {
         <h1>
           <NavLink className="nav-li" exact to="/">
             uBnb
-          </NavLink>{" "}
+          </NavLink>
         </h1>
         <NavLink className="nav-li" exact to="/search">
           Search

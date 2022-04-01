@@ -45,9 +45,9 @@ function HostForm() {
     })
       .then((r) => r.json())
       .then((newCard) => handleAddCard(newCard));
-    setFormData({ name: "", email: "" });
-    console.log(newCard);
-    history.push('/search'
+        setFormData({ name: "", email: "" });
+        console.log(newCard);
+        history.push('/search'
       // "https://www.airbnb.com/for-airbnb-org/host?_ga=2.49331118.905296572.1648657862-745576770.1643075090"
     );
   }

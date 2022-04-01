@@ -17,7 +17,6 @@ h5, h6 {
 }
 
 button.card-button {
-  color: blue;
   margin-left: 10px;
   margin-bottom: 8px;
   display: inline-block;
@@ -26,20 +25,20 @@ button.card-button {
   align-items: flex-start;
   cursor: default;
   
-  /* background-color: #47c2fc; */
+  background-color: #47c2fc;
   box-sizing: border-box;
   font: 700 11px system-ui;
   padding: 1px 7px 2px;
   border: none;
 }
-
-button.card-button:hover {
-  color: white;
-  background-color: blue;
+/* 
+button.card-button:hover a {
+  color: yellow;
+  background-color: #47c2fc;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
-}
+} */
 
 div.host {
   background-color: #f43362;
@@ -49,6 +48,7 @@ div.host {
   margin-top: 10%;
   height: 30vh;
   width: 45%;
+  border-radius: 30px;
 }
 
 button.buttonlogo {
@@ -87,6 +87,13 @@ p.logo {
   font-weight: bold;
   border-bottom: 2px solid blue;
   transition: 0.1s;
+}
+
+.nav-li:hover {
+  color: yellow;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 
 .overlay {

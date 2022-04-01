@@ -1,7 +1,8 @@
 import React from "react";
 import RentalCard from "./RentalCard";
 
-function RentalContainer({ rentals }) {
+function RentalContainer({ rentals, deleteRental}) {
+  
   return (
     <div className="cards">
       {rentals.map((rental) => (
@@ -14,6 +15,7 @@ function RentalContainer({ rentals }) {
           description={rental.description}
           contact={rental.contact}
           link={rental.link}
+          deleteRental = {deleteRental}
         />
       ))}
     </div>

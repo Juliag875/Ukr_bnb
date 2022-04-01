@@ -12,7 +12,7 @@ import HostForm from './HostForm'
 function App() {
   const [rentals, setRentals] = useState([]);
   const [locationInput, setLocationInput] = useState("");
-  const [availability, setAvailability] = useState(false);
+  const [availableRentals, setAvailableRentals] = useState(true);
 
   useEffect(() => {
     fetch("/rentals")
@@ -20,40 +20,41 @@ function App() {
       .then(setRentals);
   }, []);
 
-
   const filterByAddress = rentals.filter((rental) => 
     rental.address.toLowerCase().includes(locationInput.toLowerCase())
   );
-
+  
   const filterByAvailability = () => {
-    if (availability){
-      return filterByAddress.filter((rental) =>
-      !rental.client_id
-    );
-    }else{
-      return filterByAddress
-    }
-  }
+    if (availableRentals) {
+      return filterByAddress.filter((rental) => !rental.client_id);
+    } else {
+      return setAvailableRentals(filterByAddress)
+    }}
 
+  function deleteRental(rentalId){
+    const updatedRentals = rentals.filter(rental => 
+      rental.id !== rentalId
+    )
+    setRentals(updatedRentals)
+  }
 
   return (
     <div className="App">
       <Navbar />
 
       <Switch>
-        <Route exact path="/rentals">
-          <RentalContainer rentals={rentals} />
-        </Route>
         <Route exact path="/donation">
           <Donation />
         </Route>
         <Route exact path="/search">
           <Search
-            filterByAddress={filterByAddress}
+            filterByAddress={filterByAvailability()}
             setLocationInput={setLocationInput}
           />
-          <h2 className="yourRentals">Here Are your Rentals!</h2>
-          <RentalContainer rentals={filterByAvailability()} />
+          <h2 className="your-rentals">Here Are your Rentals!</h2>
+          <RentalContainer 
+            rentals={filterByAddress} 
+            deleteRental = {deleteRental}/>
         </Route>
         <Route exact path="/">
           <Home />
@@ -64,6 +65,6 @@ function App() {
       </Switch>
     </div>
   );
-}
+  }
 
 export default App;
